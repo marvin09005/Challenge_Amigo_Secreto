@@ -10,5 +10,16 @@ function agregarAmigo() {
   } else {
     arregloaAmigos.push(nombreAmigo);
     document.getElementById("amigo").value = '';
+    actualizarLista()
   }
+}
+
+function actualizarLista() {
+    let lista = document.getElementById("listaAmigos");
+
+    lista.innerHTML = '';
+
+    for (let numeroAmigos = 0; numeroAmigos < arregloaAmigos.length; numeroAmigos++) {
+        lista.innerHTML += `<li>${arregloaAmigos[numeroAmigos]}</li>`
+    }
 }
